@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BackgroundIcon extends StatelessWidget {
   final Widget? child;
@@ -21,8 +22,8 @@ class BackgroundIcon extends StatelessWidget {
                 top: 0,
                 right: 0,
             
-                child: Image.asset(
-                  'assets/icons/percentage.png',
+                child: SvgPicture.asset(
+                  'assets/signin/Group.svg',
                   width: 153,
                   height: 166,
                 ),
@@ -34,8 +35,8 @@ class BackgroundIcon extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                  'assets/icons/app_icon.png',
+                    SvgPicture.asset(
+                  'assets/signin/logo_signin.svg',
                   width: MediaQuery.sizeOf(context).width*0.10,
                   height:                MediaQuery.sizeOf(context).height*0.05,
             

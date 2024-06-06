@@ -1,5 +1,6 @@
 import 'package:architecture_pattern/constants/color_constants.dart';
 import 'package:architecture_pattern/reusable/common_button.dart';
+import 'package:architecture_pattern/routes/routes_names.dart';
 import 'package:architecture_pattern/screens/widgets/background_icon_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -372,6 +373,7 @@ Center(
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
+                            Navigator.pushNamed(context, RouteNames.signinScreen);
                             // Handle terms and conditions tap
                           },
                       
