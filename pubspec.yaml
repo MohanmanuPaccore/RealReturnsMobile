@@ -41,6 +41,8 @@ dependencies:
   http: ^1.2.0
   oauth2: ^2.0.2
   flutter_appauth: ^6.0.5
+  flutter_svg: ^2.0.10+1
+  email_validator: ^2.1.17
 
 dev_dependencies:
   flutter_test:
@@ -68,7 +70,9 @@ flutter:
 
   assets:
     - assets/
+    - assets/signin/
     - assets/icons/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
