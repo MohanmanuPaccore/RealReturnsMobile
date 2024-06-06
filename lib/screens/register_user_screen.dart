@@ -18,6 +18,7 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
     bool re_enter_password_filed_obscure=true;
     bool password_filed_obscure=false;
     bool isTermsCheckboxcheck=false;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,9 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
               
               ),
           const SizedBox(height: 20,),
-              Form(child: Column(
+              Form(
+                key: _formKey,
+                child: Column(
               children: [
                 Row(
                   children: [
@@ -66,7 +69,7 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
                                               ),
                                               validator: (value) {
                                                 if (value == null || value.isEmpty) {
-                                                  return 'Please enter some text';
+                                                  return 'Please enter frist name';
                                                 }
                                                 return null;
                                               },
@@ -95,7 +98,7 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter last name';
                     }
                     return null;
                   },
@@ -124,7 +127,7 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter phone number';
                     }
                     return null;
                   },
@@ -148,7 +151,7 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter email';
                     }
                     return null;
                   },
@@ -186,7 +189,7 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter password';
                     }
                     return null;
                   },
@@ -222,7 +225,7 @@ class _RegisterUserScreenState extends State<RegisterUserScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter password';
                     }
                     return null;
                   },
@@ -341,7 +344,12 @@ Center(
   child: Padding(
     padding: EdgeInsets.all(8),
     child: CommonButton().primaryButton(context,
-    onTap: (){},
+    onTap: (){
+
+      if(_formKey.currentState!.validate()){
+
+      }
+    },
     height: MediaQuery.sizeOf(context).height*0.065,
     width: MediaQuery.sizeOf(context).width/1.8,
     buttonText: 'Register Now'
