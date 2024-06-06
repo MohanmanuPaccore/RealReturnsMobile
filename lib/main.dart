@@ -2,7 +2,8 @@ import 'package:architecture_pattern/environment/environment_provider.dart';
 import 'package:architecture_pattern/environment/environment_service.dart';
 import 'package:architecture_pattern/firebase/analytics.dart';
 import 'package:architecture_pattern/firebase/appevents.dart';
-import 'package:architecture_pattern/screens/sign_in.dart';
+
+import 'package:architecture_pattern/screens/register_user_screen.dart';
 import 'package:architecture_pattern/viewmodels/login_viewmodel.dart';
 import 'package:architecture_pattern/reusable/null_error_widget.dart';
 import 'package:architecture_pattern/routes/routes.dart';
@@ -47,9 +48,10 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
         onGenerateRoute: Routes.generateRoutes,
 
-      // darkTheme: darkTheme,
+        
+      darkTheme: darkTheme,
+      home: const RegisterUserScreen(),
 
-      home: const SignInScreen()
     ));
   }
 }
