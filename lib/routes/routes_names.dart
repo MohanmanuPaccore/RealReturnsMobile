@@ -5,5 +5,6 @@ class RouteNames {
   static const String splashScreen = "splash_screen";
     static const String testScreen = "test_screen";
     static const String oauthscreen = "oauth_screen";
+    static const String signinScreen='sign_in';
 
 }
