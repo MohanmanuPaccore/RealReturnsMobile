@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:email_validator/email_validator.dart';
 
+import '../routes/routes_names.dart';
+
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -60,7 +62,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   SizedBox(height: displayHeight(context)*0.05,),
                   Text('Sign In\nto Real Returns.ai',style: TextStyle(fontSize: displayWidth(context)*0.0955),),
                   SizedBox(height: displayHeight(context)*0.0075,),
-                  Text('Learn * Understand * Invest',style: TextStyle(fontSize: displayWidth(context)*0.033),),
+                  Text('Learn * Understand * Invest',style: TextStyle(fontSize: displayWidth(context)*0.03),),
                   SizedBox(height: displayHeight(context)*0.03,),
                   TextFormField(
                     key: emailFormKey,
@@ -127,6 +129,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     width: displayWidth(context)*1,
                     height: displayWidth(context)*0.15,
                     child: ElevatedButton(onPressed: (){
+                      Navigator.pushNamed(context, RouteNames.subscriptionPlan);
 
                     },style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(12.0),),
                       backgroundColor: Colors.blueAccent.shade700,elevation: 0
@@ -149,7 +152,7 @@ class _SignInScreenState extends State<SignInScreen> {
                        elevation: 0,
                      // backgroundColor: Colors.blueGrey.shade900,
                     ),
-                        child: Text('Register Now',)),
+                        child: const Text('Register Now',)),
                   ),
                 ],
               ),

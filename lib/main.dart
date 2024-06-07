@@ -2,6 +2,7 @@ import 'package:architecture_pattern/environment/environment_provider.dart';
 import 'package:architecture_pattern/environment/environment_service.dart';
 import 'package:architecture_pattern/firebase/analytics.dart';
 import 'package:architecture_pattern/firebase/appevents.dart';
+import 'package:architecture_pattern/screens/intro_future_real_estate.dart';
 
 import 'package:architecture_pattern/screens/register_user_screen.dart';
 import 'package:architecture_pattern/viewmodels/login_viewmodel.dart';
@@ -47,10 +48,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: lightTheme,
         onGenerateRoute: Routes.generateRoutes,
-
-        
       darkTheme: darkTheme,
-      home: const RegisterUserScreen(),
+      home: const IntroFutureRealEstate(),
 
     ));
   }
