@@ -9,5 +9,6 @@ class RouteNames {
     static const String subscriptionPlan = 'subscription_plan';
     static const String introInvestment = 'intro_investment';
     static const String introReports = 'intro_reports';
+    static const String webView = 'web_view';
 
 }
