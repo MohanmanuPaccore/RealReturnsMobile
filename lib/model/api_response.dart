@@ -1,11 +1,11 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:architecture_pattern/exceptions.dart';
-import 'package:architecture_pattern/enums/response_status.dart';
-import 'package:architecture_pattern/firebase/analytics.dart';
-import 'package:architecture_pattern/firebase/appevents.dart';
-import 'package:architecture_pattern/model/user.dart';
+import 'package:RealReturns/exceptions.dart';
+import 'package:RealReturns/enums/response_status.dart';
+import 'package:RealReturns/firebase/analytics.dart';
+import 'package:RealReturns/firebase/appevents.dart';
+import 'package:RealReturns/model/user.dart';
 
 class ApiResponse<T> {
   //! Data members with T as generics

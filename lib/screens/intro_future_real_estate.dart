@@ -1,6 +1,6 @@
-import 'package:architecture_pattern/common_files/common_size_helper.dart';
-import 'package:architecture_pattern/reusable/common_button.dart';
-import 'package:architecture_pattern/routes/routes_names.dart';
+import 'package:RealReturns/common_files/common_size_helper.dart';
+import 'package:RealReturns/reusable/common_button.dart';
+import 'package:RealReturns/routes/routes_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
     class IntroFutureRealEstate extends StatefulWidget {
