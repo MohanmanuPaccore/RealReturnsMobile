@@ -1,5 +1,6 @@
 import 'package:architecture_pattern/common_files/common_size_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:email_validator/email_validator.dart';
 
@@ -22,6 +23,10 @@ class _SignInScreenState extends State<SignInScreen> {
   FocusNode emailFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();
   bool isPasswordVisible = true;
+  InAppWebViewController? webViewController;
+  final GlobalKey webViewKey = GlobalKey();
+
+
 
 
   @override
@@ -122,15 +127,21 @@ class _SignInScreenState extends State<SignInScreen> {
                   SizedBox(height: displayHeight(context)*0.01,),
                   Padding(
                     padding: EdgeInsets.only(left: displayWidth(context)*0.54),
-                    child: Text('Forgot Password?',style: TextStyle(fontSize: 12,color: Colors.blueAccent.shade700),),
+                    child: InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, RouteNames.webViewRegister,arguments: {
+                            'initial_url':"https://uat.realreturns.ai/home/forgotpasswordemail/"
+                          });                        },
+                        child: Text('Forgot Password?',style: TextStyle(fontSize: 12,color: Colors.blueAccent.shade700),)),
                   ),
                   SizedBox(height: displayHeight(context)*0.1,),
                   SizedBox(
                     width: displayWidth(context)*1,
                     height: displayWidth(context)*0.15,
                     child: ElevatedButton(onPressed: (){
-                      Navigator.pushNamed(context, RouteNames.webView);
-
+                      Navigator.pushNamed(context, RouteNames.webViewRegister,arguments: {
+                        'initial_url':"https://uat.realreturns.ai/home/dashboard"
+                      });
                     },style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(12.0),),
                       backgroundColor: Colors.blueAccent.shade700,elevation: 0
                     ),
@@ -147,12 +158,15 @@ class _SignInScreenState extends State<SignInScreen> {
                     // ),
                    // child: Text('Register Now',),
                     child: ElevatedButton(onPressed: (){
+                      Navigator.pushNamed(context, RouteNames.webViewRegister,arguments: {
+                        'initial_url':"https://uat.realreturns.ai/home/register_plan/"
+                      });
 
                     },style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(12.0),),
                        elevation: 0,
                      // backgroundColor: Colors.blueGrey.shade900,
                     ),
-                        child: const Text('Register Now',)),
+                        child: Text('Register Now',style: Theme.of(context).textTheme.bodyMedium,)),
                   ),
                 ],
               ),

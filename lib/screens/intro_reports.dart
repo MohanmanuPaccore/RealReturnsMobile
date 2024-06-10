@@ -41,7 +41,7 @@ class _IntroReportsState extends State<IntroReports> {
             Center(
               child: CommonButton().primaryButton(context,
                 onTap: (){
-                  Navigator.pushNamed(context, RouteNames.signupScreen);
+                  Navigator.pushNamed(context, RouteNames.signinScreen);
                 },
                 height: displayHeight(context)*0.075,
                 width: displayWidth(context)*0.8,
