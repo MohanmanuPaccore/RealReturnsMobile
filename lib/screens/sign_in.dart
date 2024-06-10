@@ -129,7 +129,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     width: displayWidth(context)*1,
                     height: displayWidth(context)*0.15,
                     child: ElevatedButton(onPressed: (){
-                      Navigator.pushNamed(context, RouteNames.subscriptionPlan);
+                      Navigator.pushNamed(context, RouteNames.webView);
 
                     },style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(12.0),),
                       backgroundColor: Colors.blueAccent.shade700,elevation: 0

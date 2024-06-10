@@ -7,6 +7,7 @@ import 'package:architecture_pattern/screens/oauth_screen.dart';
 import 'package:architecture_pattern/screens/sign_in.dart';
 import 'package:architecture_pattern/screens/subscription_plan.dart';
 import 'package:architecture_pattern/screens/test_screen.dart';
+import 'package:architecture_pattern/screens/web_view.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/register_user_screen.dart';
@@ -47,6 +48,10 @@ class Routes {
       case (RouteNames.signupScreen):
         return MaterialPageRoute(
             builder: (BuildContext context) => const RegisterUserScreen());
+
+      case (RouteNames.webView):
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const WebViewNavigation());
 
       default:
         return MaterialPageRoute(
