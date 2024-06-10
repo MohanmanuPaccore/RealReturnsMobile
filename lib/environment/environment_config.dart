@@ -1,8 +1,8 @@
 enum Environment { DEV, STAGING, PRODUCTION }
 
 class EnvironmentConfig {
-  final String baseUrl;
-  final String apiKey;
+  final String? baseUrl;
+  final String? webBaseURL;
 
-  const EnvironmentConfig({required this.baseUrl, required this.apiKey});
+  const EnvironmentConfig({ this.baseUrl='',this.webBaseURL=''});
 }

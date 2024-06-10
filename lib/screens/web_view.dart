@@ -131,7 +131,7 @@ class _WebViewNavigationState extends State<WebViewNavigation> {
   final GlobalKey webViewKey = GlobalKey();
 
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-
+bool isLoading=false;
   InAppWebViewController? webViewController;
   late PullToRefreshController pullToRefreshController;
   InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
@@ -176,6 +176,27 @@ class _WebViewNavigationState extends State<WebViewNavigation> {
           child: InAppWebView(
               initialUrlRequest: URLRequest(url:  Uri.parse("https://uat.realreturns.ai/")),
               key: webViewKey,
+            
+              onLoadStart: (controller, url) {
+                isLoading=true;
+                setState(() {
+                  
+                });
+              },
+              onLoadError: (controller, url, code, message) {
+                                isLoading=false;
+                setState(() {
+                  
+                });
+
+              },
+              onLoadStop: (controller, url) {
+                isLoading=false;
+                setState(() {
+                  
+                });
+              },
+              
               onWebViewCreated: (controller) {
                 webViewController = controller;
                 //_loadHtmlFromAssets();
@@ -184,9 +205,8 @@ class _WebViewNavigationState extends State<WebViewNavigation> {
                 debugPrint('URL ${url.toString()}');
                 debugPrint('URL HOST ${url!.host.toString()}');
                 if (url.toString().contains("/register_plan")) {
-                  debugPrint('Success -----------------------------------------------');
 
-                  webViewController?.goBack();
+                 // webViewController?.goBack();
 
                   // Navigator.of(context).pop();
                   // Navigator.of(context).pop();

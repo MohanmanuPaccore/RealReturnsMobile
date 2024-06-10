@@ -1,22 +1,25 @@
-import 'package:architecture_pattern/environment/environment_config.dart';
+
+import 'environment_config.dart';
 
 class EnvironmentService {
-  static Future<EnvironmentConfig> getEnvironmentConfig(Environment environment) async {
+  static EnvironmentConfig  getEnvironmentConfig(Environment environment)  {
     switch (environment) {
       case Environment.DEV:
         return const EnvironmentConfig(
-          baseUrl: "https://yiralifeapiuat.azurewebsites.net/",
-          apiKey: "YOUR_DEV_API_KEY",
+          baseUrl: "carsimpledevapi.azurewebsites.net",
+          webBaseURL: "https://uat.realreturns.ai/"
         );
       case Environment.STAGING:
         return const EnvironmentConfig(
           baseUrl: "https://api.staging.yourdomain.com",
-          apiKey: "YOUR_STAGING_API_KEY",
+                    webBaseURL: "https://uat.realreturns.ai/"
+
         );
       case Environment.PRODUCTION:
         return const EnvironmentConfig(
-          baseUrl: "https://api.production.yourdomain.com",
-          apiKey: "YOUR_PRODUCTION_API_KEY",
+          baseUrl: "carsimpleapi.azurewebsites.net",
+                    webBaseURL: "https://uat.realreturns.ai/"
+
         );
     }
   }
