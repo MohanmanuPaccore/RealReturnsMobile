@@ -1,7 +1,7 @@
-import 'package:architecture_pattern/constants/color_constants.dart';
-import 'package:architecture_pattern/reusable/common_button.dart';
-import 'package:architecture_pattern/routes/routes_names.dart';
-import 'package:architecture_pattern/screens/widgets/background_icon_widget.dart';
+import 'package:RealReturns/constants/color_constants.dart';
+import 'package:RealReturns/reusable/common_button.dart';
+import 'package:RealReturns/routes/routes_names.dart';
+import 'package:RealReturns/screens/widgets/background_icon_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

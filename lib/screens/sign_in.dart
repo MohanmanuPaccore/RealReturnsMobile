@@ -1,8 +1,12 @@
-import 'package:architecture_pattern/common_files/common_size_helper.dart';
+import 'package:RealReturns/common_files/common_size_helper.dart';
+import 'package:RealReturns/constants/web_url_constants.dart';
+import 'package:RealReturns/environment/environment_config.dart';
+import 'package:RealReturns/environment/environment_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:provider/provider.dart';
 
 import '../routes/routes_names.dart';
 
@@ -25,9 +29,23 @@ class _SignInScreenState extends State<SignInScreen> {
   bool isPasswordVisible = true;
   InAppWebViewController? webViewController;
   final GlobalKey webViewKey = GlobalKey();
+  EnvironmentProvider? environmentProvider;
+  EnvironmentConfig? envConfig;
+  
 
 
+@override
+  void initState() {
+    environmentProvider=context.read<EnvironmentProvider>();
+    getEnvironment();
+    // TODO: implement initState
+    super.initState();
+  }
 
+  getEnvironment()async{
+  envConfig= await environmentProvider?.environmentStream.first;
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -129,8 +147,8 @@ class _SignInScreenState extends State<SignInScreen> {
                     padding: EdgeInsets.only(left: displayWidth(context)*0.54),
                     child: InkWell(
                         onTap: (){
-                          Navigator.pushNamed(context, RouteNames.webViewRegister,arguments: {
-                            'initial_url':"https://uat.realreturns.ai/home/forgotpasswordemail/"
+                          Navigator.pushNamed(context, RouteNames.webView,arguments: {
+                        'initial_url':'${envConfig?.webBaseURL}${WebUrlConstants.forgotPasswordurl}'
                           });                        },
                         child: Text('Forgot Password?',style: TextStyle(fontSize: 12,color: Colors.blueAccent.shade700),)),
                   ),
@@ -139,8 +157,8 @@ class _SignInScreenState extends State<SignInScreen> {
                     width: displayWidth(context)*1,
                     height: displayWidth(context)*0.15,
                     child: ElevatedButton(onPressed: (){
-                      Navigator.pushNamed(context, RouteNames.webViewRegister,arguments: {
-                        'initial_url':"https://uat.realreturns.ai/home/dashboard"
+                      Navigator.pushNamed(context, RouteNames.webView,arguments: {
+                        'initial_url':'${envConfig?.webBaseURL}${WebUrlConstants.dashboardUrl}'
                       });
                     },style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(12.0),),
                       backgroundColor: Colors.blueAccent.shade700,elevation: 0
@@ -158,8 +176,8 @@ class _SignInScreenState extends State<SignInScreen> {
                     // ),
                    // child: Text('Register Now',),
                     child: ElevatedButton(onPressed: (){
-                      Navigator.pushNamed(context, RouteNames.webViewRegister,arguments: {
-                        'initial_url':"https://uat.realreturns.ai/home/register_plan/"
+                      Navigator.pushNamed(context, RouteNames.webView,arguments: {
+                        'initial_url':'${envConfig?.webBaseURL}${WebUrlConstants.registerUrl}'
                       });
 
                     },style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(12.0),),

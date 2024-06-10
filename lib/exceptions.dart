@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:architecture_pattern/constants/error_constants.dart';
+import 'package:RealReturns/constants/error_constants.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 

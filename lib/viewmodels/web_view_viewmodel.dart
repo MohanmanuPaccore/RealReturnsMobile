@@ -1,6 +1,6 @@
-import 'package:architecture_pattern/constants/shared_prefrence_constants.dart';
-import 'package:architecture_pattern/routes/routes.dart';
-import 'package:architecture_pattern/routes/routes_names.dart';
+import 'package:RealReturns/constants/shared_prefrence_constants.dart';
+import 'package:RealReturns/routes/routes.dart';
+import 'package:RealReturns/routes/routes_names.dart';
 import 'package:flutter/material.dart';
 
 enum WebViewState{

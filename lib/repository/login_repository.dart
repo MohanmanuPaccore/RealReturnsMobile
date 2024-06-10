@@ -1,7 +1,7 @@
-import 'package:architecture_pattern/base_api_service.dart';
-import 'package:architecture_pattern/model/api_response.dart';
-import 'package:architecture_pattern/model/user.dart';
-import 'package:architecture_pattern/service/login_service.dart';
+import 'package:RealReturns/base_api_service.dart';
+import 'package:RealReturns/model/api_response.dart';
+import 'package:RealReturns/model/user.dart';
+import 'package:RealReturns/service/login_service.dart';
 import 'package:flutter_appauth/flutter_appauth.dart';
 
 class LoginRepository {

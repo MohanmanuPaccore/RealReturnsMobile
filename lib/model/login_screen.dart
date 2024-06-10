@@ -1,7 +1,7 @@
-import 'package:architecture_pattern/enums/response_status.dart';
-import 'package:architecture_pattern/firebase/analytics.dart';
-import 'package:architecture_pattern/screens/oauth_screen.dart';
-import 'package:architecture_pattern/viewmodels/login_viewmodel.dart';
+import 'package:RealReturns/enums/response_status.dart';
+import 'package:RealReturns/firebase/analytics.dart';
+import 'package:RealReturns/screens/oauth_screen.dart';
+import 'package:RealReturns/viewmodels/login_viewmodel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

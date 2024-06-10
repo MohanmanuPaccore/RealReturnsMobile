@@ -1,7 +1,7 @@
   import 'dart:developer';
 
-import 'package:architecture_pattern/firebase/appevents.dart';
-import 'package:architecture_pattern/model/user.dart';
+import 'package:RealReturns/firebase/appevents.dart';
+import 'package:RealReturns/model/user.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 enum LoginType { USER_ROLE1, USER_ROLE2, unverified }
 

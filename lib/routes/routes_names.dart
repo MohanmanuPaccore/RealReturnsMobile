@@ -10,6 +10,5 @@ class RouteNames {
     static const String introInvestment = 'intro_investment';
     static const String introReports = 'intro_reports';
     static const String webView = 'web_view';
-    static const String webViewRegister = 'web_view_register';
 
 }

@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:architecture_pattern/enums/response_status.dart';
-import 'package:architecture_pattern/environment/environment_provider.dart';
-import 'package:architecture_pattern/environment/environment_service.dart';
-import 'package:architecture_pattern/model/api_response.dart';
-import 'package:architecture_pattern/model/user.dart';
-import 'package:architecture_pattern/repository/login_repository.dart';
-import 'package:architecture_pattern/utils/url_utils.dart';
+import 'package:RealReturns/enums/response_status.dart';
+import 'package:RealReturns/environment/environment_provider.dart';
+import 'package:RealReturns/environment/environment_service.dart';
+import 'package:RealReturns/model/api_response.dart';
+import 'package:RealReturns/model/user.dart';
+import 'package:RealReturns/repository/login_repository.dart';
+import 'package:RealReturns/utils/url_utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_appauth/flutter_appauth.dart';

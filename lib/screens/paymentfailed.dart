@@ -1,6 +1,6 @@
-import 'package:architecture_pattern/screens/widgets/background_icon_widget.dart';
+import 'package:RealReturns/screens/widgets/background_icon_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:architecture_pattern/common_files/common_size_helper.dart';
+import 'package:RealReturns/common_files/common_size_helper.dart';
 import '../constants/assets_constants.dart';
 import '../routes/routes_names.dart';
 

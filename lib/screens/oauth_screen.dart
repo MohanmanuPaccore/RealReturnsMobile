@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:architecture_pattern/firebase/analytics.dart';
-import 'package:architecture_pattern/viewmodels/login_viewmodel.dart';
+import 'package:RealReturns/firebase/analytics.dart';
+import 'package:RealReturns/viewmodels/login_viewmodel.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';

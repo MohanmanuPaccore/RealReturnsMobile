@@ -1,15 +1,15 @@
-import 'package:architecture_pattern/environment/environment_provider.dart';
-import 'package:architecture_pattern/environment/environment_service.dart';
-import 'package:architecture_pattern/firebase/analytics.dart';
-import 'package:architecture_pattern/firebase/appevents.dart';
-import 'package:architecture_pattern/screens/intro_future_real_estate.dart';
+import 'package:RealReturns/environment/environment_provider.dart';
+import 'package:RealReturns/environment/environment_service.dart';
+import 'package:RealReturns/firebase/analytics.dart';
+import 'package:RealReturns/firebase/appevents.dart';
+import 'package:RealReturns/screens/intro_future_real_estate.dart';
 
-import 'package:architecture_pattern/screens/register_user_screen.dart';
-import 'package:architecture_pattern/viewmodels/login_viewmodel.dart';
-import 'package:architecture_pattern/reusable/null_error_widget.dart';
-import 'package:architecture_pattern/routes/routes.dart';
-import 'package:architecture_pattern/routes/routes_names.dart';
-import 'package:architecture_pattern/themes/themes.dart';
+import 'package:RealReturns/screens/register_user_screen.dart';
+import 'package:RealReturns/viewmodels/login_viewmodel.dart';
+import 'package:RealReturns/reusable/null_error_widget.dart';
+import 'package:RealReturns/routes/routes.dart';
+import 'package:RealReturns/routes/routes_names.dart';
+import 'package:RealReturns/themes/themes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

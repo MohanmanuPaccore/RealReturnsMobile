@@ -1,5 +1,5 @@
-import 'package:architecture_pattern/environment/environment_config.dart';
-import 'package:architecture_pattern/environment/environment_service.dart';
+import 'package:RealReturns/environment/environment_config.dart';
+import 'package:RealReturns/environment/environment_service.dart';
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
