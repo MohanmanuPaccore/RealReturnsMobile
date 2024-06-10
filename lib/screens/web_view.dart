@@ -31,7 +31,7 @@ class _WebViewState extends State<WebView> {
     WebViewController.fromPlatformCreationParams(params);
     controller
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..loadRequest(Uri.parse('https://uat.realreturns.ai/'));
+      ..loadRequest(Uri.parse('https://www.google.com/'));
     //https://pluvialdemo.azurewebsites.net/
 
     _controller = controller;
@@ -40,7 +40,7 @@ class _WebViewState extends State<WebView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: WebViewWidget(controller: _controller)),
+      body: SafeArea(child: WebViewWidget(controller: _controller,)),
       bottomNavigationBar: controls(),
     );
   }
@@ -126,7 +126,7 @@ class WebViewNavigation extends StatefulWidget {
 
 class _WebViewNavigationState extends State<WebViewNavigation> {
   //WebViewController? _controller;
-  late final WebViewController _controller;
+  late WebViewController _controller;
 
   final GlobalKey webViewKey = GlobalKey();
 
@@ -150,6 +150,15 @@ class _WebViewNavigationState extends State<WebViewNavigation> {
   @override
   void initState() {
     super.initState();
+
+
+    late final PlatformWebViewControllerCreationParams params;
+
+    params = const PlatformWebViewControllerCreationParams();
+
+
+    final WebViewController controller =
+    WebViewController.fromPlatformCreationParams(params);
    // debugPrint('PAYMENT URL ${widget.register!}');
 
     // pullToRefreshController = PullToRefreshController(
@@ -165,78 +174,91 @@ class _WebViewNavigationState extends State<WebViewNavigation> {
     //     }
     //   },
     // );
+    _controller = controller;
+  }
 
+
+
+  Widget controls(){
+    return NavigationControls(webViewController: _controller);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        key: scaffoldKey,
-        body: Center(
-          child: InAppWebView(
-              initialUrlRequest: URLRequest(url:  Uri.parse("https://uat.realreturns.ai/")),
-              key: webViewKey,
-              onWebViewCreated: (controller) {
-                webViewController = controller;
-                //_loadHtmlFromAssets();
-              },
-              onUpdateVisitedHistory: (controller, url, androidIsReload) {
-                debugPrint('URL ${url.toString()}');
-                debugPrint('URL HOST ${url!.host.toString()}');
-                if (url.toString().contains("/register_plan")) {
-                  debugPrint('Success -----------------------------------------------');
-
-                  webViewController?.goBack();
-
-                  // Navigator.of(context).pop();
-                  // Navigator.of(context).pop();
-
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => TransactionSuccessFullScreen(
-                  //           success: true,
-                  //           transactionId: widget.transactionId,
-                  //           result: widget.result,
-                  //           totalAmount: widget.totalAmount,
-                  //           controlNumber: widget.controlNumber)),
-                  // );
-
-                  //Prevent that url works
-                  return;
-                } else if (url.toString() ==
-                    "https://connect.squareupsandbox.com/v2/checkout") {
-                  //You can do anything
-                  //webViewController?.goBack();
-                  debugPrint('FAILUER');
-
-                  webViewController?.goBack();
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop();
-
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => TransactionSuccessFullScreen(
-                  //           success: false,
-                  //           transactionId: widget.transactionId,
-                  //           result: widget.result,
-                  //           totalAmount: widget.totalAmount,
-                  //           controlNumber: widget.controlNumber)),
-                  // );
-                  //Prevent that url works
-                  return;
-                } else if (url.host.contains("duckduckgo.com")) {
-                  //You can do anything
-                  webViewController?.goBack();
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => const UserConfigScreen()),
-                  // );
-                }
-              }),
-        ));
+    return SafeArea(
+      child: Scaffold(
+          key: scaffoldKey,
+          body: Center(
+            child: InAppWebView(
+                initialUrlRequest: URLRequest(url:  Uri.parse("https://uat.realreturns.ai/")),
+                key: webViewKey,
+                onWebViewCreated: (controller) {
+                  webViewController = controller;
+                  //_loadHtmlFromAssets();
+                },
+                onUpdateVisitedHistory: (controller, url, androidIsReload) {
+                  debugPrint('URL ${url.toString()}');
+                  debugPrint('URL HOST ${url!.host.toString()}');
+                  if (url.toString().contains("/register_plan")) {
+                    debugPrint('Success -----------------------------------------------');
+                    // InAppWebView(
+                    //   initialUrlRequest: URLRequest(url: Uri.parse("https://uat.realreturns.ai/home/register_plan/")),
+                    // );
+                   // webViewController?.goBack();
+                    
+      
+                    // Navigator.of(context).pop();
+                    // Navigator.of(context).pop();
+      
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) => TransactionSuccessFullScreen(
+                    //           success: true,
+                    //           transactionId: widget.transactionId,
+                    //           result: widget.result,
+                    //           totalAmount: widget.totalAmount,
+                    //           controlNumber: widget.controlNumber)),
+                    // );
+      
+                    //Prevent that url works
+                    return;
+                  } else if (url.toString() ==
+                      "https://connect.squareupsandbox.com/v2/checkout") {
+                    //You can do anything
+                    //webViewController?.goBack();
+                    debugPrint('FAILUER');
+      
+                    webViewController?.goBack();
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+      
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) => TransactionSuccessFullScreen(
+                    //           success: false,
+                    //           transactionId: widget.transactionId,
+                    //           result: widget.result,
+                    //           totalAmount: widget.totalAmount,
+                    //           controlNumber: widget.controlNumber)),
+                    // );
+                    //Prevent that url works
+                    return;
+                  } else if (url.host.contains("duckduckgo.com")) {
+                    //You can do anything
+                    webViewController?.goBack();
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) => const UserConfigScreen()),
+                    // );
+                  }
+                }),
+          ),
+        bottomNavigationBar: controls(),
+      ),
+    );
   }
 
   _loadHtmlFromAssets() {
@@ -255,4 +277,7 @@ class _WebViewNavigationState extends State<WebViewNavigation> {
     //     .toString());
   }
 }
+
+
+
 

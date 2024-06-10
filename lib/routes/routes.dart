@@ -8,12 +8,17 @@ import 'package:architecture_pattern/screens/sign_in.dart';
 import 'package:architecture_pattern/screens/subscription_plan.dart';
 import 'package:architecture_pattern/screens/test_screen.dart';
 import 'package:architecture_pattern/screens/web_view.dart';
+import 'package:architecture_pattern/screens/web_view_actions.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/register_user_screen.dart';
 
 class Routes {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
+    Map<String,dynamic>? arguments;
+    if(settings.arguments!=null){
+    arguments=settings.arguments as Map<String,dynamic>;
+    }
     switch (settings.name) {
       case (RouteNames.home):
         return MaterialPageRoute(
@@ -52,6 +57,11 @@ class Routes {
       case (RouteNames.webView):
         return MaterialPageRoute(
             builder: (BuildContext context) => const WebViewNavigation());
+
+
+      case (RouteNames.webViewRegister):
+        return MaterialPageRoute(
+            builder: (BuildContext context) => WebViewRegister(initialUrl: arguments?['initial_url'],));
 
       default:
         return MaterialPageRoute(
